@@ -8,13 +8,11 @@
 
         <span>Active task</span>
       </v-btn>
-
       <v-btn>
         <v-icon>mdi-magnify</v-icon>
 
         <span>Search</span>
       </v-btn>
-
       <v-btn>
         <v-icon>mdi-information</v-icon>
 
