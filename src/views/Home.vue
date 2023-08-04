@@ -1,7 +1,15 @@
 <template>
-  <DashBoard />
+  <div>
+    <DashBoard/>  
+  </div>
+  
+  
 </template>
 
-<script setup>
-  import DashBoard from '@/components/DashBoard.vue'
+<script>  
+  import DashBoard from '@/components/DashBoard.vue'      
+  export default {
+    name: "Home",
+    components: {DashBoard}    
+  }
 </script>
