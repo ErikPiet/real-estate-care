@@ -7,7 +7,7 @@
             "soort": "slijtage",
             "datum": "2023-01-02",
             "acuut": "nee",
-            "omschrijving": "keukenkast deurtje zit los"
+            "omschrijving": "In de keuken zit het keukenkast deurtje van de koelkast los."
         },
         {
             "id": 2,
@@ -16,7 +16,7 @@
             "soort": "moedwillig",
             "datum": "2023-03-22",
             "acuut": "ja",
-            "omschrijving": "Grafity verwijderen"
+            "omschrijving": "Grafity verwijderen, langs de zijkant van het pand 4 stuks"
         },
         {
             "id": 3,
@@ -26,6 +26,25 @@
             "datum": "2023-04-01",
             "acuut": "ja",
             "omschrijving": "Schuifdeur uit rails, spoed, we kunnen vandaag niet afsluiten"
+        },
+        {
+            "id": 4,
+            "locatie": "Lisse",
+            "nieuw": "ja",
+            "soort": "calamiteit",
+            "datum": "2023-02-24",
+            "acuut": "ja",
+            "omschrijving": "De lift is deffect, er zit nog iemand in. Lift staat stil tussen twee etages"
+        }
+        ,
+        {
+            "id": 5,
+            "locatie": "Hillegom",
+            "nieuw": "nee",
+            "soort": "onderhoud",
+            "datum": "2023-05-01",
+            "acuut": "ja",
+            "omschrijving": "De kozijnen buiten zouden in het voorjaar geschilderd zijn maar dit is niet gedaan."
         }
     ]
 }
