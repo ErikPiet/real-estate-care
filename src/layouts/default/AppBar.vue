@@ -12,7 +12,9 @@
       
       <v-btn icon="mdi-bell"></v-btn>
 
-      <v-btn icon="mdi-cog"></v-btn>
+      <router-link to="AppSettings">
+        <v-btn icon="mdi-cog"></v-btn>
+      </router-link>
     </template>
   </v-app-bar>
 
@@ -39,4 +41,13 @@
 
 <script setup>
   //
+  
 </script>
+
+<style>
+:link {
+  text-decoration: none;
+  color: #fff;
+
+}
+</style>

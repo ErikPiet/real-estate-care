@@ -17,7 +17,7 @@
                 </tr>
                 <tr>
                     <td>Nieuw</td>
-                    <td>{{ inspection.neuw }}</td>
+                    <td>{{ inspection.new }}</td>
                 </tr>
                 <tr>
                     <td>Acuut</td>

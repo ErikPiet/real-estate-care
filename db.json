@@ -34,7 +34,7 @@
             "kind": "calamiteit",
             "date": "2023-02-24",
             "acute": "ja",
-            "description": "De lift is deffect, er zit nog iemand in. Lift staat stil tussen twee etages"
+            "description": "De lift is defect, er zit nog iemand in. Lift staat stil tussen twee etages"
         }
         ,
         {
@@ -46,5 +46,21 @@
             "acute": "ja",
             "description": "De kozijnen buiten zouden in het voorjaar geschilderd zijn maar dit is niet gedaan."
         }
+    ],
+    "maintenance": [        
+        {
+            "id": 1,
+            "location": "Hoofddorp",
+            "kind": "schilderwerk",
+            "acute": "nee",
+            "costs": "500"
+        },
+        {
+            "id": 1,
+            "location": "Nieuw-Vennep",
+            "kind": "schilderwerk",
+            "acute": "ja",
+            "costs": "1500"
+        },
     ]
 }
