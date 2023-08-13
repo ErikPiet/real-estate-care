@@ -14,7 +14,7 @@
     <li class="list-group-item"
       @click="getInspection(inspection.id)"
         v-for="inspection of inspections" :key="inspection.id"
-    >{{ inspection.datum }} - {{ inspection.locatie }}</li>    
+    >{{ inspection.date }} - {{ inspection.location }}</li>    
   </ul>
 </div>
 </template>
