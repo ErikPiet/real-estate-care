@@ -1,4 +1,10 @@
 # base
+## update 13-8-2023
+```
+Store gebouwd waarin data wordt ingeladen.
+Routing ingebouwd
+Pagina CompletedList en InspectionDetail omgebouwd zodat deze data uit de store ontvangen
+```
 
 ## update 4-8-2023 
 ```
@@ -6,8 +12,6 @@ Prototype opnieuw gebouwd (nu niet met yarn maar npm)
 Component Appbar voor Menu bars (top en bottom)
 Component DashBoard met de 4 knoppen
 db.json gemaakt met mockdata
-Service EventService leest json in
-Component CompletedList geeft lijst afgeronde inspecties
 ```
 
 ## Project setup
