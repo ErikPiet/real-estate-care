@@ -2,49 +2,49 @@
     "damage-inspections": [        
         {
             "id": 1,
-            "locatie": "Hoofddorp",
-            "nieuw": "ja",
-            "soort": "slijtage",
-            "datum": "2023-01-02",
-            "acuut": "nee",
-            "omschrijving": "In de keuken zit het keukenkast deurtje van de koelkast los."
+            "location": "Hoofddorp",
+            "new": "ja",
+            "kind": "slijtage",
+            "date": "2023-01-02",
+            "acute": "nee",
+            "description": "In de keuken zit het keukenkast deurtje van de koelkast los."
         },
         {
             "id": 2,
-            "locatie": "Nieuw-Vennep",
-            "nieuw": "ja",
-            "soort": "moedwillig",
-            "datum": "2023-03-22",
-            "acuut": "ja",
-            "omschrijving": "Grafity verwijderen, langs de zijkant van het pand 4 stuks"
+            "location": "Nieuw-Vennep",
+            "new": "ja",
+            "kind": "moedwillig",
+            "date": "2023-03-22",
+            "acute": "ja",
+            "description": "Grafity verwijderen, langs de zijkant van het pand 4 stuks"
         },
         {
             "id": 3,
-            "locatie": "Lisse",
-            "nieuw": "ja",
-            "soort": "calamiteit",
-            "datum": "2023-04-01",
-            "acuut": "ja",
-            "omschrijving": "Schuifdeur uit rails, spoed, we kunnen vandaag niet afsluiten"
+            "location": "Lisse",
+            "new": "ja",
+            "kind": "calamiteit",
+            "date": "2023-04-01",
+            "acute": "ja",
+            "description": "Schuifdeur uit rails, spoed, we kunnen vandaag niet afsluiten"
         },
         {
             "id": 4,
-            "locatie": "Lisse",
-            "nieuw": "ja",
-            "soort": "calamiteit",
-            "datum": "2023-02-24",
-            "acuut": "ja",
-            "omschrijving": "De lift is deffect, er zit nog iemand in. Lift staat stil tussen twee etages"
+            "location": "Lisse",
+            "new": "ja",
+            "kind": "calamiteit",
+            "date": "2023-02-24",
+            "acute": "ja",
+            "description": "De lift is deffect, er zit nog iemand in. Lift staat stil tussen twee etages"
         }
         ,
         {
             "id": 5,
-            "locatie": "Hillegom",
-            "nieuw": "nee",
-            "soort": "onderhoud",
-            "datum": "2023-05-01",
-            "acuut": "ja",
-            "omschrijving": "De kozijnen buiten zouden in het voorjaar geschilderd zijn maar dit is niet gedaan."
+            "location": "Hillegom",
+            "new": "nee",
+            "kind": "onderhoud",
+            "date": "2023-05-01",
+            "acute": "ja",
+            "description": "De kozijnen buiten zouden in het voorjaar geschilderd zijn maar dit is niet gedaan."
         }
     ]
 }

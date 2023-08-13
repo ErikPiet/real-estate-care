@@ -1,5 +1,5 @@
 <template>   
-<button @click="fetchInspections()" class="btn btn-dark">Haal lijst op</button>
+<button @click="fetchInspections()" class="btn btn-dark">Schade</button>
 <!--loading indicator-->
 <div v-if="!loading">
   <h3>Loading...</h3>

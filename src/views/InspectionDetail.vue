@@ -9,23 +9,23 @@
                 </tr>
                 <tr>
                     <td>Locatie</td>
-                    <td>{{ inspection.locatie }}</td>
+                    <td>{{ inspection.location }}</td>
                 </tr>
                 <tr>
                     <td>Inspectie datum</td>
-                    <td>{{ inspection.datum }}</td>
+                    <td>{{ inspection.date }}</td>
                 </tr>
                 <tr>
                     <td>Nieuw</td>
-                    <td>{{ inspection.nieuw }}</td>
+                    <td>{{ inspection.neuw }}</td>
                 </tr>
                 <tr>
                     <td>Acuut</td>
-                    <td>{{ inspection.acuut }}</td>
+                    <td>{{ inspection.acute }}</td>
                 </tr>
                 <tr>
                     <td>Omschrijving</td>
-                    <td>{{ inspection.omschrijving }}</td>
+                    <td>{{ inspection.description }}</td>
                 </tr>
             </tbody>
         </table>
