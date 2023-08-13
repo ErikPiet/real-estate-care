@@ -1,6 +1,6 @@
 <template>
     <div v-if="inspection"><!-- -->
-        <h3>Details: {{ inspection.locatie }} - {{ inspection.datum }}</h3>
+        <h3>Details: {{ inspection.location }} - {{ inspection.date }}</h3>
         <table class="table table-striped">
             <tbody>
                 <tr>
