@@ -9,26 +9,41 @@
                 </tr>
                 <tr>
                     <td>Locatie</td>
-                    <td>{{ inspection.location }}</td>
+                    <td>{{ inspection.object }}</td>
                 </tr>
                 <tr>
                     <td>Inspectie datum</td>
                     <td>{{ inspection.date }}</td>
                 </tr>
-                <tr>
-                    <td>Nieuw</td>
-                    <td>{{ inspection.new }}</td>
-                </tr>
-                <tr>
-                    <td>Acuut</td>
-                    <td>{{ inspection.acute }}</td>
-                </tr>
-                <tr>
-                    <td>Omschrijving</td>
-                    <td>{{ inspection.description }}</td>
-                </tr>
             </tbody>
         </table>
+        <div v-if="inspection.damage">
+            <table class="table table-striped">
+                <caption>Schade</caption>
+                <tbody>
+                    <tr>
+                        <td>Locatie van de schade</td>
+                        <td>{{ inspection.damageLocation }}</td>
+                    </tr>
+                    <tr>
+                        <td>Schade datum</td>
+                        <td>{{ inspection.damageDate }}</td>
+                    </tr>
+                    <tr>
+                        <td>Nieuwe schade?</td>
+                        <td>{{ inspection.damageOld }}</td>
+                    </tr>
+                    <tr>
+                        <td>Acute schade?</td>
+                        <td>{{ inspection.damageAcute }}</td>
+                    </tr>
+                    <tr>
+                        <td>Omschrijving schade</td>
+                        <td>{{ inspection.damageDescription }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
 
       
