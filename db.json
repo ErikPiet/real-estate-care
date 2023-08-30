@@ -3,6 +3,7 @@
         {
             "id": 1,
             "object": "Hoofddorp",
+            "date": "2023-01-04",
             "damage": true,              
             "damage-location": "Keuken",
             "damage-new": "ja",
