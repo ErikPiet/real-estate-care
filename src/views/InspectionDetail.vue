@@ -1,6 +1,6 @@
 <template>
     <div v-if="inspection"><!-- -->
-        <h3>Details: {{ inspection.location }} - {{ inspection.date }}</h3>
+        <h3>Details: {{ inspection.object }}</h3>
         <table class="table table-striped">
             <tbody>
                 <tr>
@@ -19,7 +19,11 @@
         </table>
         <div v-if="inspection.damage">
             <table class="table table-striped">
-                <caption>Schade</caption>
+                <thead>
+                    <tr>
+                        <th colspan="2">Schade opnemen</th>
+                    </tr>
+                </thead>
                 <tbody>
                     <tr>
                         <td>Locatie van de schade</td>
@@ -31,7 +35,7 @@
                     </tr>
                     <tr>
                         <td>Nieuwe schade?</td>
-                        <td>{{ inspection.damageOld }}</td>
+                        <td>{{ inspection.damageNew }}</td>
                     </tr>
                     <tr>
                         <td>Acute schade?</td>
@@ -41,6 +45,18 @@
                         <td>Omschrijving schade</td>
                         <td>{{ inspection.damageDescription }}</td>
                     </tr>
+                </tbody>
+            </table>
+        </div>
+        <div v-if="inspection.maintenance">
+            <table class="table table-striped">
+                <caption>Onderhoud</caption>
+                <tbody>
+                    <tr>
+                        <td>Locatie van onderhoud</td>
+                        <td>{{ inspection.damageLocation }}</td>
+                    </tr>
+                  
                 </tbody>
             </table>
         </div>

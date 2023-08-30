@@ -15,7 +15,14 @@
             "maintenanceLocation": "",
             "maintenanceKind": "",
             "maintenanceAcute": "",
-            "maintenanceCost": ""         
+            "maintenanceCost": "",
+            "techInpect": true,
+            "techLocation": "Meterkast",
+            "techKind": "Electra",
+            "techReportErrors": "Geen",
+            "techTestproc": "https://document.pdf",
+            "techApproved": "Ja", 
+            "techDescription": "Technisch alles in orde, bewoner mag hier geen spullen opslaan. Afgesproken dat de kast wordt vrijgehouden."
         }        
     ]
 }
