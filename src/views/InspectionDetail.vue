@@ -50,13 +50,63 @@
         </div>
         <div v-if="inspection.maintenance">
             <table class="table table-striped">
-                <caption>Onderhoud</caption>
+                <thead>
+                    <tr>
+                        <th colspan="2">(Achterstallig) Onderhoud</th>
+                    </tr>
+                </thead>
                 <tbody>
                     <tr>
                         <td>Locatie van onderhoud</td>
-                        <td>{{ inspection.damageLocation }}</td>
+                        <td>{{ inspection.maintenanceLocation }}</td>
                     </tr>
-                  
+                    <tr>
+                        <td>Soort onderhoud</td>
+                        <td>{{ inspection.maintenanceKind }}</td>
+                    </tr>
+                    <tr>
+                        <td>Acuut onderhoud</td>
+                        <td>{{ inspection.maintenanceAcute }}</td>
+                    </tr>
+                    <tr>
+                        <td>Geschatte kosten onderhoud</td>
+                        <td>{{ inspection.maintenanceCost }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div v-if="inspection.techInspect">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th colspan="2">Technische installatie inspecteren</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Locatie technische installatie</td>
+                        <td>{{ inspection.techLocation }}</td>
+                    </tr>
+                    <tr>
+                        <td>Soort installatie</td>
+                        <td>{{ inspection.techKind }}</td>
+                    </tr>
+                    <tr>
+                        <td>Gemelde storingen</td>
+                        <td>{{ inspection.techReportErrors }}</td>
+                    </tr>
+                    <tr>
+                        <td>Testprocedure</td>
+                        <td>{{ inspection.techTestproc }}</td>
+                    </tr>
+                    <tr>
+                        <td>Goedgekeurd</td>
+                        <td>{{ inspection.techApproved }}</td>
+                    </tr>
+                    <tr>
+                        <td>Opmerkingen</td>
+                        <td>{{ inspection.techDescription }}</td>
+                    </tr>
                 </tbody>
             </table>
         </div>

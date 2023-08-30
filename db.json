@@ -23,6 +23,30 @@
             "techTestproc": "https://document.pdf",
             "techApproved": "Ja", 
             "techDescription": "Technisch alles in orde, bewoner mag hier geen spullen opslaan. Afgesproken dat de kast wordt vrijgehouden."
+        },
+        {
+            "id": 2,
+            "object": "Nieuw-Vennep",
+            "date": "2023-02-06",
+            "damage": false,              
+            "damageLocation": "",
+            "damageNew": "",
+            "damageKind": "",
+            "damageDate": "",
+            "damageAcute": "",
+            "damageDescription": "",
+            "maintenance": true,
+            "maintenanceLocation": "Dakrand",
+            "maintenanceKind": "Schilderwerk",
+            "maintenanceAcute": "nee",
+            "maintenanceCost": "0-500",
+            "techInpect": true,
+            "techLocation": "Dak",
+            "techKind": "Electra",
+            "techReportErrors": "Geen",
+            "techTestproc": "https://document2.pdf",
+            "techApproved": "Ja", 
+            "techDescription": "zonnepanelen en omvormer zijn in goede staat"
         }        
     ]
 }
