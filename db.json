@@ -2,14 +2,19 @@
     "inspections": [        
         {
             "id": 1,
-            "damage": {                
-                "location": "Hoofddorp",
-                "new": "ja",
-                "kind": "slijtage",
-                "date": "2023-01-02",
-                "acute": "nee",
-                "description": "In de keuken zit het keukenkast deurtje van de koelkast los."
-            }
+            "object": "Hoofddorp",
+            "damage": true,              
+            "damage-location": "Keuken",
+            "damage-new": "ja",
+            "damage-kind": "slijtage",
+            "damage-date": "2023-01-02",
+            "damage-acute": "nee",
+            "damage-description": "In de keuken zit het keukenkast deurtje van de koelkast los.",
+            "maintenance": false,
+            "maintenance-location": "",
+            "maintenance-kind": "",
+            "maintenance-acute": "",
+            "maintenance-cost": ""         
         }        
     ]
 }
