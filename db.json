@@ -1,66 +1,16 @@
 {
-    "damage-inspections": [        
+    "inspections": [        
         {
             "id": 1,
-            "location": "Hoofddorp",
-            "new": "ja",
-            "kind": "slijtage",
-            "date": "2023-01-02",
-            "acute": "nee",
-            "description": "In de keuken zit het keukenkast deurtje van de koelkast los."
+            "damage": {                
+                "location": "Hoofddorp",
+                "new": "ja",
+                "kind": "slijtage",
+                "date": "2023-01-02",
+                "acute": "nee",
+                "description": "In de keuken zit het keukenkast deurtje van de koelkast los."
+            }
         },
-        {
-            "id": 2,
-            "location": "Nieuw-Vennep",
-            "new": "ja",
-            "kind": "moedwillig",
-            "date": "2023-03-22",
-            "acute": "ja",
-            "description": "Grafity verwijderen, langs de zijkant van het pand 4 stuks"
-        },
-        {
-            "id": 3,
-            "location": "Lisse",
-            "new": "ja",
-            "kind": "calamiteit",
-            "date": "2023-04-01",
-            "acute": "ja",
-            "description": "Schuifdeur uit rails, spoed, we kunnen vandaag niet afsluiten"
-        },
-        {
-            "id": 4,
-            "location": "Lisse",
-            "new": "ja",
-            "kind": "calamiteit",
-            "date": "2023-02-24",
-            "acute": "ja",
-            "description": "De lift is defect, er zit nog iemand in. Lift staat stil tussen twee etages"
-        }
-        ,
-        {
-            "id": 5,
-            "location": "Hillegom",
-            "new": "nee",
-            "kind": "onderhoud",
-            "date": "2023-05-01",
-            "acute": "ja",
-            "description": "De kozijnen buiten zouden in het voorjaar geschilderd zijn maar dit is niet gedaan."
-        }
-    ],
-    "maintenance": [        
-        {
-            "id": 1,
-            "location": "Hoofddorp",
-            "kind": "schilderwerk",
-            "acute": "nee",
-            "costs": "500"
-        },
-        {
-            "id": 1,
-            "location": "Nieuw-Vennep",
-            "kind": "schilderwerk",
-            "acute": "ja",
-            "costs": "1500"
-        }
+        
     ]
 }

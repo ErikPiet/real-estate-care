@@ -34,7 +34,7 @@ export default new Vuex.Store({
             //1. set loading status
             context.commit('SET_LOADING_STATUS', 'loading');
             //2. http-request
-            apiClient.get('/damage-inspections')           
+            apiClient.get('/inspections')           
                 .then(result => {
                     context.commit('SET_LOADING_STATUS', 'notloading');
                     context.commit('SET_INSPECTIONS', result.data);
