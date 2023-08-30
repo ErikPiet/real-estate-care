@@ -17,8 +17,8 @@
                 </tr>
             </tbody>
         </table>
-        <div v-if="inspection.damage">
-            <table class="table table-striped">
+       
+            <table class="table table-striped" v-if="inspection.damage">
                 <thead>
                     <tr>
                         <th colspan="2">Schade opnemen</th>
@@ -47,9 +47,8 @@
                     </tr>
                 </tbody>
             </table>
-        </div>
-        <div v-if="inspection.maintenance">
-            <table class="table table-striped">
+        
+            <table class="table table-striped" v-if="inspection.maintenance">
                 <thead>
                     <tr>
                         <th colspan="2">(Achterstallig) Onderhoud</th>
@@ -74,9 +73,8 @@
                     </tr>
                 </tbody>
             </table>
-        </div>
-        <div v-if="inspection.techInspect">
-            <table class="table table-striped">
+      
+            <table class="table table-striped" v-if="inspection.techInspect">
                 <thead>
                     <tr>
                         <th colspan="2">Technische installatie inspecteren</th>
@@ -109,7 +107,7 @@
                     </tr>
                 </tbody>
             </table>
-        </div>
+
     </div>
 
       
