@@ -2,6 +2,7 @@
     "inspections": [        
         {
             "id": 1,
+            "status": "Completed",
             "object": "Hoofddorp",
             "date": "2023-01-04",
             "damage": true,              
@@ -22,10 +23,18 @@
             "techReportErrors": "Geen",
             "techTestproc": "https://document.pdf",
             "techApproved": "Ja", 
-            "techDescription": "Technisch alles in orde, bewoner mag hier geen spullen opslaan. Afgesproken dat de kast wordt vrijgehouden."
+            "techDescription": "Technisch alles in orde, bewoner mag hier geen spullen opslaan. Afgesproken dat de kast wordt vrijgehouden.",
+            "modification": false,
+            "modificationCurrentSituation": "",
+            "modificationLocation": "",
+            "modificationCarriedOutBy": "",
+            "modificationDescription": "",
+            "modificationAction": "",
+            "modificationComments": ""
         },
         {
             "id": 2,
+            "status": "Completed",
             "object": "Nieuw-Vennep",
             "date": "2023-02-06",
             "damage": false,              
@@ -46,7 +55,20 @@
             "techReportErrors": "Geen",
             "techTestproc": "https://document2.pdf",
             "techApproved": "Ja", 
-            "techDescription": "zonnepanelen en omvormer zijn in goede staat"
-        }        
+            "techDescription": "zonnepanelen en omvormer zijn in goede staat",
+            "modification": false,
+            "modificationCurrentSituation": "",
+            "modificationLocation": "",
+            "modificationCarriedOutBy": "",
+            "modificationDescription": "",
+            "modificationAction": "",
+            "modificationComments": ""
+        },
+        {
+            "id": 3,
+            "status": "Scheduled",
+            "object": "Lisse"
+            
+        }           
     ]
 }
