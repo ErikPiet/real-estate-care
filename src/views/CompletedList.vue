@@ -12,10 +12,12 @@
 <div>
   <h2>Completed inspections</h2>
   <ul class="list-group">
-    <li class="list-group-item"
-      @click="getInspection(inspection.id)"
-        v-for="inspection of inspections" :key="inspection.id"
-    >{{ inspection.date }} - {{ inspection.object }}</li>    
+    <template v-for="inspection of inspections" :key="inspection.id">
+      <li class="list-group-item"
+          @click="getInspection(inspection.id)"        
+          v-if="inspection.status !='Scheduled'"    
+      >{{ inspection.date }} - {{ inspection.object }}</li>
+    </template>    
   </ul>
 </div>
 </template>

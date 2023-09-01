@@ -1,7 +1,7 @@
 <template>
     <v-btn @click="$router.push('./')" density="compact" icon="mdi-home"></v-btn> 
     <div v-if="inspection"><!-- -->
-        <h3>Details: {{ inspection.object }}</h3>
+        <h3>Edit: {{ inspection.object }}</h3>
         <table class="table table-striped">
             <tbody>
                 <tr>
@@ -142,7 +142,6 @@
                     </tr>
                 </tbody>
             </table>
-
     </div>
 
       

@@ -25,19 +25,24 @@ const routes = [
         component: () => import(/* webpackChunkName: "inspection-detail" */ '@/views/InspectionDetail.vue'),
       },
       {
+        path: '/inspection-edit/:id',
+        name: 'inspection-edit',
+        component: () => import(/* webpackChunkName: "inspection-edit" */ '@/views/InspectionEdit.vue'),
+      },
+      {
         path: '/ScheduledList',
         name: 'ScheduledList',
-        component: () => import(/* webpackChunkName: "completed" */ '@/views/ScheduledList.vue'),
+        component: () => import(/* webpackChunkName: "scheduled" */ '@/views/ScheduledList.vue'),
       },
       {
         path: '/KnowledgeBase',
         name: 'KnowledgeBase',
-        component: () => import(/* webpackChunkName: "completed" */ '@/views/KnowledgeBase.vue'),
+        component: () => import(/* webpackChunkName: "Knowledge" */ '@/views/KnowledgeBase.vue'),
       },
       {
         path: '/AppSettings',
         name: 'AppSettings',
-        component: () => import(/* webpackChunkName: "completed" */ '@/views/AppSettings.vue'),
+        component: () => import(/* webpackChunkName: "settings" */ '@/views/AppSettings.vue'),
       },
     ],
   },

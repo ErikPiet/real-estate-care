@@ -52,8 +52,9 @@ export default new Vuex.Store({
     getters: {
         //alleen gevraagde inspectie tonen vanuit de store
         getInspection: (state) => (id) => {
-            return state.inspections.find(c => c.id == id && c.status === "Scheduled")
-        }        
+            return state.inspections.find(c => c.id == id)            
+        } 
+               
     },
 
 })
