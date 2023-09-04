@@ -28,6 +28,9 @@ export default new Vuex.Store({
         ADD_ERROR(state, payload) {
             state.errors = [...state.errors, payload];
         },
+        UPDATE_INSPECTIONS(state, payload){
+            state.inspections = payload;
+        },
     },
     actions: {
         fetchInspections(context) {
@@ -44,6 +47,9 @@ export default new Vuex.Store({
                     context.commit('SET_INSPECTIONS', []);
                     context.commit('ADD_ERROR', err);
                 })
+        },
+        saveInspections(context) {
+            context.commit('UPDATE_INSPECTIONS')
         },
         clearInspections(context) {
             context.commit('CLEAR_INSPECTIONS')

@@ -1,5 +1,5 @@
 <template>
-    <v-btn @click="$router.push('./')" density="compact" icon="mdi-home"></v-btn> 
+    <v-btn @click="$router.push('../ScheduledList')" density="compact" icon="mdi-arrow-left-bold-circle-outline"></v-btn> 
     <div v-if="inspection"><!-- -->
         <h3>Edit: {{ inspection.object }}</h3>
         <table class="table table-striped">
@@ -14,47 +14,44 @@
                 </tr>
                 <tr>
                     <td>Inspectie datum</td>
-                    <td>{{ inspection.date }}</td>
+                    <td><input  type="date"></td>
                 </tr>
             </tbody>
-        </table>
-       
-            <table class="table table-striped" v-if="inspection.damage">
-                <thead>
-                    <tr>
-                        <th colspan="2">Schade opnemen</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Locatie van de schade</td>
-                        <td>{{ inspection.damageLocation }}</td>
-                    </tr>
-                    <tr>
-                        <td>Schade datum</td>
-                        <td>{{ inspection.damageDate }}</td>
-                    </tr>
-                    <tr>
-                        <td>Nieuwe schade?</td>
-                        <td>{{ inspection.damageNew }}</td>
-                    </tr>
-                    <tr>
-                        <td>Acute schade?</td>
-                        <td>{{ inspection.damageAcute }}</td>
-                    </tr>
-                    <tr>
-                        <td>Omschrijving schade</td>
-                        <td>{{ inspection.damageDescription }}</td>
-                    </tr>
-                </tbody>
-            </table>
-        
-            <table class="table table-striped" v-if="inspection.maintenance">
-                <thead>
-                    <tr>
-                        <th colspan="2">(Achterstallig) Onderhoud</th>
-                    </tr>
-                </thead>
+        </table>       
+        <div>
+            <v-checkbox
+                v-model="inspection.damage"
+                label="Schade opnemen"                
+            ></v-checkbox>
+        </div> 
+        <div v-if="inspection.damage">
+            <v-text-field v-model="inspection.damageLocation" label="Locatie van de schade"  variant="outlined"></v-text-field>
+            <!--<input v-model="inspection.damageLocation">-->
+            <v-radio-group label="Nieuwe schade?" v-model="inspection.damageNew">
+                <v-radio label="Ja" value="Ja"></v-radio>
+                <v-radio label="Nee" value="Nee"></v-radio>
+            </v-radio-group>
+            <v-select
+                label="Soort schade"
+                :items="['moedwillig', 'slijtage', 'geweld', 'normaal gebruik', 'calamiteit', 'anders']"
+
+            ></v-select>
+            <!-- Hier een datumpicker toevoegen -->
+            <v-radio-group label="Acute schade?">
+                <v-radio label="Ja" value="Ja"></v-radio>
+                <v-radio label="Nee" value="Nee"></v-radio>
+            </v-radio-group>
+            <v-textarea label="Omschrijving schade" variant="outlined"></v-textarea>
+
+        </div>       
+             
+        <div>
+            <v-checkbox
+                v-model="onderhoud"
+                label="(Achterstallig) onderhoud"
+            ></v-checkbox>
+        </div>        
+            <table class="table table-striped" v-if="onderhoud">
                 <tbody>
                     <tr>
                         <td>Locatie van onderhoud</td>
@@ -73,14 +70,14 @@
                         <td>{{ inspection.maintenanceCost }}</td>
                     </tr>
                 </tbody>
-            </table>
-      
-            <table class="table table-striped" v-if="inspection.techInspect">
-                <thead>
-                    <tr>
-                        <th colspan="2">Technische installatie inspecteren</th>
-                    </tr>
-                </thead>
+            </table> 
+        <div>
+            <v-checkbox
+                v-model="technisch"
+                label="Technische installatie inspecteren"
+            ></v-checkbox>
+        </div>        
+            <table class="table table-striped" v-if="technisch">
                 <tbody>
                     <tr>
                         <td>Locatie technische installatie</td>
@@ -109,12 +106,13 @@
                 </tbody>
             </table>
 
-            <table class="table table-striped" v-if="inspection.modification">
-                <thead>
-                    <tr>
-                        <th colspan="2">Modificaties inventariseren</th>
-                    </tr>
-                </thead>
+        <div>
+            <v-checkbox
+                v-model="modificatie"
+                label="Modificatie inventariseren"
+            ></v-checkbox>
+        </div>        
+            <table class="table table-striped" v-if="modificatie">
                 <tbody>
                     <tr>
                         <td>Bestaande situatie en reeds gedocumenteerde modificaties.</td>
@@ -138,7 +136,7 @@
                     </tr>
                     <tr>
                         <td>Opmerkingen</td>
-                        <td>{{ inspection.ModificationComments }}</td>
+                        <td>{{ inspection.modificationComments }}</td>
                     </tr>
                 </tbody>
             </table>
@@ -147,8 +145,16 @@
       
 </template>
 <script>    
-    
+    import { mapState } from 'vuex';
     export default {
+        data (){
+            return {
+                
+                onderhoud: false,
+                technisch: false,
+                modificatie: false,
+            }
+        },
         name: "ApiVuexDetail",            
         created() {            
             this.id = this.$route.params.id;   
@@ -157,9 +163,22 @@
         computed: {
             inspection() {   
                 return this.$store.getters.getInspection(this.id);
-            }
-        }
+            },
+            ...mapState({
+                damage: state => state.obj.damage,
+                damageLocation: state => state.obj.damageLocation,
+                damageNew: state => state.obj.damageNew
+            })
+        },
+        
     }
 
-    
+  /*damageLocation: {
+                get () {
+                return this.$store.state.obj.damageLocation
+                },
+                set (value) {
+                this.$store.commit('updateInspections', value)
+                }
+            }*/  
 </script>

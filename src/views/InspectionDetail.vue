@@ -1,5 +1,5 @@
 <template>
-    <v-btn @click="$router.push('./')" density="compact" icon="mdi-home"></v-btn> 
+    <v-btn @click="$router.push('../CompletedList')" density="compact" icon="mdi-arrow-left-bold-circle-outline"></v-btn> 
     <div v-if="inspection"><!-- -->
         <h3>Details: {{ inspection.object }}</h3>
         <table class="table table-striped">
@@ -18,7 +18,7 @@
                 </tr>
             </tbody>
         </table>
-       
+        
             <table class="table table-striped" v-if="inspection.damage">
                 <thead>
                     <tr>
@@ -138,7 +138,7 @@
                     </tr>
                     <tr>
                         <td>Opmerkingen</td>
-                        <td>{{ inspection.ModificationComments }}</td>
+                        <td>{{ inspection.modificationComments }}</td>
                     </tr>
                 </tbody>
             </table>
