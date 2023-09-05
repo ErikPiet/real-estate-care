@@ -14,7 +14,7 @@
                 </tr>
                 <tr>
                     <td>Inspectie datum</td>
-                    <td>{{ inspection.date }}</td>
+                    <td>{{ inspection.dueDate }}</td>
                 </tr>
             </tbody>
         </table>
@@ -28,23 +28,23 @@
                 <tbody>
                     <tr>
                         <td>Locatie van de schade</td>
-                        <td>{{ inspection.damageLocation }}</td>
+                        <td>{{ inspection.dLocation }}</td>
                     </tr>
                     <tr>
                         <td>Schade datum</td>
-                        <td>{{ inspection.damageDate }}</td>
+                        <td>{{ inspection.dDate }}</td>
                     </tr>
                     <tr>
                         <td>Nieuwe schade?</td>
-                        <td>{{ inspection.damageNew }}</td>
+                        <td>{{ inspection.dNew }}</td>
                     </tr>
                     <tr>
                         <td>Acute schade?</td>
-                        <td>{{ inspection.damageAcute }}</td>
+                        <td>{{ inspection.dAcute }}</td>
                     </tr>
                     <tr>
                         <td>Omschrijving schade</td>
-                        <td>{{ inspection.damageDescription }}</td>
+                        <td>{{ inspection.dDescription }}</td>
                     </tr>
                 </tbody>
             </table>
@@ -58,24 +58,24 @@
                 <tbody>
                     <tr>
                         <td>Locatie van onderhoud</td>
-                        <td>{{ inspection.maintenanceLocation }}</td>
+                        <td>{{ inspection.mLocation }}</td>
                     </tr>
                     <tr>
                         <td>Soort onderhoud</td>
-                        <td>{{ inspection.maintenanceKind }}</td>
+                        <td>{{ inspection.mKind }}</td>
                     </tr>
                     <tr>
                         <td>Acuut onderhoud</td>
-                        <td>{{ inspection.maintenanceAcute }}</td>
+                        <td>{{ inspection.mAcute }}</td>
                     </tr>
                     <tr>
                         <td>Geschatte kosten onderhoud</td>
-                        <td>{{ inspection.maintenanceCost }}</td>
+                        <td>{{ inspection.mCost }}</td>
                     </tr>
                 </tbody>
             </table>
       
-            <table class="table table-striped" v-if="inspection.techInspect">
+            <table class="table table-striped" v-if="inspection.tech">
                 <thead>
                     <tr>
                         <th colspan="2">Technische installatie inspecteren</th>
@@ -84,23 +84,23 @@
                 <tbody>
                     <tr>
                         <td>Locatie technische installatie</td>
-                        <td>{{ inspection.techLocation }}</td>
+                        <td>{{ inspection.tLocation }}</td>
                     </tr>
                     <tr>
                         <td>Soort installatie</td>
-                        <td>{{ inspection.techKind }}</td>
+                        <td>{{ inspection.tKind }}</td>
                     </tr>
                     <tr>
                         <td>Gemelde storingen</td>
-                        <td>{{ inspection.techReportErrors }}</td>
+                        <td>{{ inspection.tReportErrors }}</td>
                     </tr>
                     <tr>
                         <td>Testprocedure</td>
-                        <td>{{ inspection.techTestproc }}</td>
+                        <td>{{ inspection.tTestproc }}</td>
                     </tr>
                     <tr>
                         <td>Goedgekeurd</td>
-                        <td>{{ inspection.techApproved }}</td>
+                        <td>{{ inspection.tApproved }}</td>
                     </tr>
                     <tr>
                         <td>Opmerkingen</td>
@@ -118,27 +118,27 @@
                 <tbody>
                     <tr>
                         <td>Bestaande situatie en reeds gedocumenteerde modificaties.</td>
-                        <td>{{ inspection.modificationCurrentSituation }}</td>
+                        <td>{{ inspection.modCurrentSituation }}</td>
                     </tr>
                     <tr>
                         <td>Locatie aangetroffen modificatie</td>
-                        <td>{{ inspection.modificationLocation }}</td>
+                        <td>{{ inspection.modLocation }}</td>
                     </tr>
                     <tr>
                         <td>Uitgevoerd door</td>
-                        <td>{{ inspection.modificationCarriedOutBy }}</td>
+                        <td>{{ inspection.modCarriedOutBy }}</td>
                     </tr>
                     <tr>
                         <td>Beschrijving modificatie</td>
-                        <td>{{ inspection.modificationDescription }}</td>
+                        <td>{{ inspection.modDescription }}</td>
                     </tr>
                     <tr>
                         <td>Te ondernemen actie</td>
-                        <td>{{ inspection.modificationAction }}</td>
+                        <td>{{ inspection.modAction }}</td>
                     </tr>
                     <tr>
                         <td>Opmerkingen</td>
-                        <td>{{ inspection.modificationComments }}</td>
+                        <td>{{ inspection.modComments }}</td>
                     </tr>
                 </tbody>
             </table>

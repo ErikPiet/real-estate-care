@@ -14,7 +14,7 @@
                 </tr>
                 <tr>
                     <td>Inspectie datum</td>
-                    <td><input  type="date"></td>
+                    <td><input  type="dueDate"></td>
                 </tr>
             </tbody>
         </table>       
@@ -25,9 +25,9 @@
             ></v-checkbox>
         </div> 
         <div v-if="inspection.damage">
-            <v-text-field v-model="inspection.damageLocation" label="Locatie van de schade"  variant="outlined"></v-text-field>
-            <!--<input v-model="inspection.damageLocation">-->
-            <v-radio-group label="Nieuwe schade?" v-model="inspection.damageNew">
+            <v-text-field v-model="inspection.dLocation" label="Locatie van de schade"  variant="outlined"></v-text-field>
+            <!--<input v-model="inspection.dLocation">-->
+            <v-radio-group label="Nieuwe schade?" v-model="inspection.dNew">
                 <v-radio label="Ja" value="Ja"></v-radio>
                 <v-radio label="Nee" value="Nee"></v-radio>
             </v-radio-group>
@@ -146,15 +146,7 @@
 </template>
 <script>    
     import { mapState } from 'vuex';
-    export default {
-        data (){
-            return {
-                
-                onderhoud: false,
-                technisch: false,
-                modificatie: false,
-            }
-        },
+    export default {        
         name: "ApiVuexDetail",            
         created() {            
             this.id = this.$route.params.id;   
@@ -166,8 +158,8 @@
             },
             ...mapState({
                 damage: state => state.obj.damage,
-                damageLocation: state => state.obj.damageLocation,
-                damageNew: state => state.obj.damageNew
+                dLocation: state => state.obj.dLocation,
+                dNew: state => state.obj.dNew
             })
         },
         

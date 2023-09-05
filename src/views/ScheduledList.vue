@@ -16,7 +16,7 @@
         <li class="list-group-item"
             @click="getInspection(inspection.id)"        
             v-if="inspection.status =='Scheduled'"    
-        >{{ inspection.object }}</li>
+        >{{ inspection.dueDate }} - {{ inspection.object }}</li>
       </template>    
     </ul>
   </div>
