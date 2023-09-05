@@ -1,5 +1,5 @@
 <template>  
-<v-btn @click="$router.push('./')" density="compact" icon="mdi-home"></v-btn> 
+<v-btn @click="$router.push('./')" density="compact" icon="mdi-arrow-left-bold-circle-outline"></v-btn> 
 <v-btn @click="fetchInspections()" density="compact" icon="mdi-autorenew"></v-btn>
 <!--loading indicator-->
 <div v-if="!loading">

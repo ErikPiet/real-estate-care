@@ -7,7 +7,7 @@
 
 <script>  
   import DashBoard from '@/components/DashBoard.vue'      
-  export default {
+  export default {    
     name: "Home",
     components: {DashBoard}    
   }

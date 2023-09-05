@@ -1,7 +1,7 @@
 <template>
     <v-btn @click="$router.push('../CompletedList')" density="compact" icon="mdi-arrow-left-bold-circle-outline"></v-btn> 
     <div v-if="inspection"><!-- -->
-        <h3>Details: {{ inspection.object }}</h3>
+        <h3>Edit: {{ inspection.object }}</h3>
         <table class="table table-striped">
             <tbody>
                 <tr>
@@ -17,139 +17,118 @@
                     <td>{{ inspection.dueDate }}</td>
                 </tr>
             </tbody>
-        </table>
-        
-            <table class="table table-striped" v-if="inspection.damage">
-                <thead>
-                    <tr>
-                        <th colspan="2">Schade opnemen</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Locatie van de schade</td>
-                        <td>{{ inspection.dLocation }}</td>
-                    </tr>
-                    <tr>
-                        <td>Schade datum</td>
-                        <td>{{ inspection.dDate }}</td>
-                    </tr>
-                    <tr>
-                        <td>Nieuwe schade?</td>
-                        <td>{{ inspection.dNew }}</td>
-                    </tr>
-                    <tr>
-                        <td>Acute schade?</td>
-                        <td>{{ inspection.dAcute }}</td>
-                    </tr>
-                    <tr>
-                        <td>Omschrijving schade</td>
-                        <td>{{ inspection.dDescription }}</td>
-                    </tr>
-                </tbody>
-            </table>
-        
-            <table class="table table-striped" v-if="inspection.maintenance">
-                <thead>
-                    <tr>
-                        <th colspan="2">(Achterstallig) Onderhoud</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Locatie van onderhoud</td>
-                        <td>{{ inspection.mLocation }}</td>
-                    </tr>
-                    <tr>
-                        <td>Soort onderhoud</td>
-                        <td>{{ inspection.mKind }}</td>
-                    </tr>
-                    <tr>
-                        <td>Acuut onderhoud</td>
-                        <td>{{ inspection.mAcute }}</td>
-                    </tr>
-                    <tr>
-                        <td>Geschatte kosten onderhoud</td>
-                        <td>{{ inspection.mCost }}</td>
-                    </tr>
-                </tbody>
-            </table>
-      
-            <table class="table table-striped" v-if="inspection.tech">
-                <thead>
-                    <tr>
-                        <th colspan="2">Technische installatie inspecteren</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Locatie technische installatie</td>
-                        <td>{{ inspection.tLocation }}</td>
-                    </tr>
-                    <tr>
-                        <td>Soort installatie</td>
-                        <td>{{ inspection.tKind }}</td>
-                    </tr>
-                    <tr>
-                        <td>Gemelde storingen</td>
-                        <td>{{ inspection.tReportErrors }}</td>
-                    </tr>
-                    <tr>
-                        <td>Testprocedure</td>
-                        <td>{{ inspection.tTestproc }}</td>
-                    </tr>
-                    <tr>
-                        <td>Goedgekeurd</td>
-                        <td>{{ inspection.tApproved }}</td>
-                    </tr>
-                    <tr>
-                        <td>Opmerkingen</td>
-                        <td>{{ inspection.techDescription }}</td>
-                    </tr>
-                </tbody>
-            </table>
-
-            <table class="table table-striped" v-if="inspection.modification">
-                <thead>
-                    <tr>
-                        <th colspan="2">Modificaties inventariseren</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Bestaande situatie en reeds gedocumenteerde modificaties.</td>
-                        <td>{{ inspection.modCurrentSituation }}</td>
-                    </tr>
-                    <tr>
-                        <td>Locatie aangetroffen modificatie</td>
-                        <td>{{ inspection.modLocation }}</td>
-                    </tr>
-                    <tr>
-                        <td>Uitgevoerd door</td>
-                        <td>{{ inspection.modCarriedOutBy }}</td>
-                    </tr>
-                    <tr>
-                        <td>Beschrijving modificatie</td>
-                        <td>{{ inspection.modDescription }}</td>
-                    </tr>
-                    <tr>
-                        <td>Te ondernemen actie</td>
-                        <td>{{ inspection.modAction }}</td>
-                    </tr>
-                    <tr>
-                        <td>Opmerkingen</td>
-                        <td>{{ inspection.modComments }}</td>
-                    </tr>
-                </tbody>
-            </table>
-
+        </table>   
+        <div>            
+            <v-switch
+                v-model="inspection.status"
+                hide-details
+                true-value="Completed"
+                false-value="Scheduled"
+                color="teal-lighten-1"
+                inset
+                :label="`Status: ${inspection.status.toString()}`"
+            ></v-switch>
+        </div>    
+        <div>
+            <v-checkbox
+                v-model="inspection.damage"
+                label="Schade opnemen"                
+            ></v-checkbox>
+            <div v-if="inspection.damage">
+                <v-text-field v-model="inspection.dLocation" label="Locatie van de schade"  variant="outlined"></v-text-field>
+                <v-radio-group label="Nieuwe schade?" v-model="inspection.dNew">
+                    <v-radio label="Ja" value="true"></v-radio>
+                    <v-radio label="Nee" value="false"></v-radio>
+                </v-radio-group>
+                <v-select
+                    v-model="inspection.dKind"
+                    label="Soort schade"
+                    :items="['moedwillig', 'slijtage', 'geweld', 'normaal gebruik', 'calamiteit', 'anders']"
+                ></v-select>
+                <v-text-field label="YYYY-MM-DD" variant="outlined" v-model="inspection.dDate"></v-text-field>
+                <v-radio-group label="Acute schade?" v-model="inspection.dAcute">
+                    <v-radio label="Ja" value="Ja"></v-radio>
+                    <v-radio label="Nee" value="Nee"></v-radio>
+                </v-radio-group>
+                <v-textarea label="Omschrijving schade" variant="outlined" v-model="inspection.dDescription"></v-textarea>
+            </div>  
+        </div> 
+             
+             
+        <div>
+            <v-checkbox
+                v-model="inspection.maintenance"
+                label="(Achterstallig) onderhoud"
+            ></v-checkbox>
+            <div v-if="inspection.maintenance">
+                <v-text-field v-model="inspection.mLocation" label="Locatie"  variant="outlined"></v-text-field>
+                <v-select
+                    v-model="inspection.mKind"
+                    label="Soort onderhoud"
+                    :items="['schilderwerk', 'houtrot', 'elektra', 'beveiliging']"
+                ></v-select>
+                <v-radio-group label="Acute actie vereist?" v-model="inspection.mAcute">
+                    <v-radio label="Ja" value="Ja"></v-radio>
+                    <v-radio label="Nee" value="Nee"></v-radio>
+                </v-radio-group>
+                <v-select
+                    v-model="inspection.mCost"
+                    label="Kostenindicatie"
+                    :items="['0-500', '500-1500', '1500 +']"
+                ></v-select>
+            </div>
+        </div>        
+            
+        <div>
+            <v-checkbox
+                v-model="inspection.tech"
+                label="Technische installatie inspecteren"
+            ></v-checkbox>
+            <div v-if="inspection.tech">
+                <v-text-field v-model="inspection.tLocation" label="Locatie"  variant="outlined"></v-text-field>
+                <v-select
+                    v-model="inspection.tKind"
+                    label="Soort installatie"
+                    :items="['koeling', 'verwarming', 'luchtverversing', 'elektra', 'beveiliging']"
+                ></v-select>
+                <v-text-field v-model="inspection.tReportErrors" label="Gemelde storingen"  variant="outlined"></v-text-field>
+                <v-text-field v-model="inspection.tTestproc" label="Testprocedure"  variant="outlined"></v-text-field>
+                <v-radio-group label="Goed gekeurd?" v-model="inspection.tApproved">
+                    <v-radio label="Ja" value="Ja"></v-radio>
+                    <v-radio label="Nee" value="Nee"></v-radio>
+                </v-radio-group>
+                <v-textarea label="Opmerkingen" variant="outlined" v-model="inspection.tDescription"></v-textarea>
+            </div>
+        </div>   
+        <div>
+            <v-checkbox
+                v-model="inspection.modification"
+                label="Modificatie inventariseren"
+            ></v-checkbox>
+            <div v-if="inspection.modification">
+                <v-text-field v-model="inspection.modCurrentSituation" label="Bestaande situatie en reeds gedocumenteerde modificaties"  variant="outlined"></v-text-field>
+                <v-text-field v-model="inspection.modLocation" label="Locatie aangetroffen modificatie"  variant="outlined"></v-text-field>
+                <v-select
+                    v-model="inspection.modCarriedOutBy"
+                    label="Uitgevoerd door"
+                    :items="['huurder', 'aannemer', 'onbekend']"
+                ></v-select>
+                <v-text-field v-model="inspection.modDescription" label="Beschrijving modificatie"  variant="outlined"></v-text-field>
+                <v-select
+                    v-model="inspection.modAction"
+                    label="Te ondernemen actie"
+                    :items="['accepteren', 'laten keuren', 'laten verwijderen', 'laten aanpassen en keuren']"
+                ></v-select>
+                <v-textarea label="Opmerkingen" variant="outlined" v-model="inspection.modComments"></v-textarea>
+            </div>
+        </div>
     </div>
 
       
 </template>
 <script>    
-    
-    export default {
+    import { mapState } from 'vuex';    
+    export default {               
         name: "ApiVuexDetail",            
         created() {            
             this.id = this.$route.params.id;   
@@ -158,9 +137,19 @@
         computed: {
             inspection() {   
                 return this.$store.getters.getInspection(this.id);
-            }
-        }
+            },
+            ...mapState({
+                status: state => state.obj.status,
+                damage: state => state.obj.damage,
+                dLocation: state => state.obj.dLocation,
+                dNew: state => state.obj.dNew,
+                dKind: state => state.obj.dKind,
+                dDate: state => state.obj.dDate,
+                dAcute: state => state.obj.dAcute,
+                dDescription: state => state.obj.dDescription,
+            })
+        },
+        
     }
-
-    
+  
 </script>

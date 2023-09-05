@@ -57,16 +57,14 @@
 </template>
 
 <script>
-
-
-export default {
-  name: "DashBoard",
-  
-}
+  export default {    
+    name: "DashBoard",
+    
+  }
 </script>
 <style>
-:link {
-  text-decoration: none;
-}
+  :link {
+    text-decoration: none;
+  }
 
 </style>
