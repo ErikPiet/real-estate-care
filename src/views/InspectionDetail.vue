@@ -30,28 +30,30 @@
             ></v-switch>
         </div>    
         <div>
-            <v-checkbox
-                v-model="inspection.damage"
-                label="Schade opnemen"                
-            ></v-checkbox>
-            <div v-if="inspection.damage">
-                <v-text-field v-model="inspection.dLocation" label="Locatie van de schade"  variant="outlined"></v-text-field>
-                <v-radio-group label="Nieuwe schade?" v-model="inspection.dNew">
-                    <v-radio label="Ja" value="true"></v-radio>
-                    <v-radio label="Nee" value="false"></v-radio>
-                </v-radio-group>
-                <v-select
-                    v-model="inspection.dKind"
-                    label="Soort schade"
-                    :items="['moedwillig', 'slijtage', 'geweld', 'normaal gebruik', 'calamiteit', 'anders']"
-                ></v-select>
-                <v-text-field label="YYYY-MM-DD" variant="outlined" v-model="inspection.dDate"></v-text-field>
-                <v-radio-group label="Acute schade?" v-model="inspection.dAcute">
-                    <v-radio label="Ja" value="Ja"></v-radio>
-                    <v-radio label="Nee" value="Nee"></v-radio>
-                </v-radio-group>
-                <v-textarea label="Omschrijving schade" variant="outlined" v-model="inspection.dDescription"></v-textarea>
-            </div>  
+            <v-form disabled>
+                <v-checkbox
+                    v-model="inspection.damage"
+                    label="Schade opnemen"                
+                ></v-checkbox>
+                <div v-if="inspection.damage">
+                    <v-text-field v-model="inspection.dLocation" label="Locatie van de schade"  variant="outlined"></v-text-field>
+                    <v-radio-group label="Nieuwe schade?" v-model="inspection.dNew">
+                        <v-radio label="Ja" value="true"></v-radio>
+                        <v-radio label="Nee" value="false"></v-radio>
+                    </v-radio-group>
+                    <v-select
+                        v-model="inspection.dKind"
+                        label="Soort schade"
+                        :items="['moedwillig', 'slijtage', 'geweld', 'normaal gebruik', 'calamiteit', 'anders']"
+                    ></v-select>
+                    <v-text-field label="YYYY-MM-DD" variant="outlined" v-model="inspection.dDate"></v-text-field>
+                    <v-radio-group label="Acute schade?" v-model="inspection.dAcute">
+                        <v-radio label="Ja" value="Ja"></v-radio>
+                        <v-radio label="Nee" value="Nee"></v-radio>
+                    </v-radio-group>
+                    <v-textarea label="Omschrijving schade" variant="outlined" v-model="inspection.dDescription"></v-textarea>
+                </div>
+            </v-form>
         </div> 
              
              
